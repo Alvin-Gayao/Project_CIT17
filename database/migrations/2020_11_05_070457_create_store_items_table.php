@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSystemUsersTable extends Migration
+class CreateStoreItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateSystemUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('system_users', function (Blueprint $table) {
+        Schema::create('store_items', function (Blueprint $table) {
             $table->id();
-            $table->char('username', 255);
-            $table->char('password', 255);
-            $table->string('usertype');
+            $table->string('itemName');
+            $table->string('itemDescription');
+            $table->double('price', 10, 2);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateSystemUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('system_users');
+        Schema::dropIfExists('store_items');
     }
 }
