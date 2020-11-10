@@ -15,6 +15,10 @@ class CreateItemsSoldTable extends Migration
     {
         Schema::create('items_sold', function (Blueprint $table) {
             $table->id();
+            $table->int('productID');
+            $table->int('quantity');
+            $table->int('buyerID');
+            $table->date('sold_at');
             $table->timestamps();
         });
     }
