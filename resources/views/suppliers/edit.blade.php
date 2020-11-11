@@ -12,7 +12,7 @@
             <input type="text" name="name" class="form-control" value="{{ $supplier->name }}" placeholder="Enter Name">
           </div>
           <div class="form-group">
-            <input type="number" name="contact" class="form-control" value="{{ $supplier->contact }}" placeholder="Enter Contact">
+            <input type="text" name="contact" class="form-control" value="{{ $supplier->contact }}" placeholder="Enter Contact">
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-primary" name="save">Save</button>
