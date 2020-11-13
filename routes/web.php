@@ -26,3 +26,14 @@ Route::get('/suppliers/{supplier}/edit', 'SuppliersController@edit');
 Route::put('/suppliers/{supplier}', 'SuppliersController@update');
 //destroy
 Route::delete('/suppliers/{supplier}', 'SuppliersController@destroy');
+
+//Products//
+Route::get('/products', 'ProductsController@index');
+//create
+Route::get('/productss/create', 'ProductsController@create');
+Route::post('/products', 'ProductsController@store');
+//update
+Route::get('/products/{products}/edit', 'ProductsController@edit');
+Route::put('/products/{products}', 'ProductsController@update');
+//destroy
+Route::delete('/products/{products}', 'ProductsController@destroy');
