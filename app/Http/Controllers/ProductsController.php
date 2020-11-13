@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\products;
 use Illuminate\Http\Request;
+
 
 class ProductsController extends Controller
 {
 public function index()
     {
-    	$products = Products::all();
+    	$products = products::all();
     	return view('products.index', compact('products'));
     }
 
@@ -19,7 +21,7 @@ public function index()
 
     public function store()
     {
-    	$products = new Products;
+    	$products = new products;
     	$products->itemName = request()->itemName;
     	$products->itemDescription = request()->itemDescription;
     	$products->price = request()->price;
@@ -30,12 +32,12 @@ public function index()
 
     }
 
-    public function edit(Products $products)
+    public function edit(products $products)
     {
     	return view('products.edit', compact('products'));
     }
 
-    public function update(Products $products)
+    public function update(products $products)
     {
     	$products->itemName = request()->itemName;
     	$products->itemDescription = request()->itemDescription;
@@ -45,7 +47,7 @@ public function index()
     	return redirect('/products');
     }
 
-    public function destroy(Products $products)
+    public function destroy(products $products)
     {
     	$products->delete();
     	return redirect('/products');
