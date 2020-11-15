@@ -30,10 +30,10 @@ Route::delete('/suppliers/{supplier}', 'SuppliersController@destroy');
 //Products//
 Route::get('/products', 'ProductsController@index');
 //create
-Route::get('/productss/create', 'ProductsController@create');
+Route::get('/products/create', 'ProductsController@create');
 Route::post('/products', 'ProductsController@store');
 //update
-Route::get('/products/{products}/edit', 'ProductsController@edit');
-Route::put('/products/{products}', 'ProductsController@update');
+Route::get('/products/{product}/edit', 'ProductsController@edit');
+Route::put('/products/{product}', 'ProductsController@update');
 //destroy
-Route::delete('/products/{products}', 'ProductsController@destroy');
+Route::delete('/products/{product}', 'ProductsController@destroy');

@@ -5,19 +5,19 @@
     <h4>Add Products</h4>
     <div class="container">
       <div class="row justify-content-center">
-        <form action="/suppliers" method="POST">
+        <form action="/products" method="POST">
            @csrf
 
           <div class="form-group">
-          <input type="text" name="itemName" class="form-control" value="{{ $products->itemName }}" placeholder="Enter Item Name">
+          <input type="text" name="name" class="form-control" placeholder="Enter Product Name" autocomplete="off" required>
           </div>
 
           <div class="form-group">
-            <input type="text" name="itemDescription" class="form-control" value="{{ $products->itemDescription }}" placeholder="Enter Item Description">
+            <input type="text" name="description" class="form-control" placeholder="Enter Description" autocomplete="off" required>
           </div>
           
            <div class="form-group">
-            <input type="number" name="price" class="form-control" value="{{ $products->price }}" placeholder="Enter Price">
+            <input type="number" name="price" class="form-control" placeholder="Enter Price" autocomplete="off" required>
           </div>
 
            <div class="form-group">
