@@ -7,6 +7,7 @@
 	<h3>Suppliers</h3>
 	<div class="container">
 	  <div class="row justify-content-center" >
+	  	@include('layouts.errors')
 	  	<table class="table">
 	  	  <thead>
 	  	  	<tr>
