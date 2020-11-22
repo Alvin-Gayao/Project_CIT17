@@ -42,27 +42,28 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Studio Managerial System</h1>
                   </div>
-                  <form class="user" method="post">
+                  <form class="user" action="/login" method='POST'>
+                    @include('layouts.errors')
+                    @csrf
                     <div class="form-group">
-                      <input type="email" name ="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                      <input type="email" name ="email" class="form-control form-control-user"  placeholder="Enter Email" required autocomplete="off">
                     </div>
                     <div class="form-group">
-                      <input type="password" name="pass" class="form-control form-control-user" id="exampleInputPassword" placeholder="Enter Password">
+                      <input type="password" name="password" class="form-control form-control-user" placeholder="Enter Password">
                     </div>
-                    <div class="form-group">
-                      <div>
-                        Select User Type: <select type="text" name="usertype">
-                          <option value="admin">admin</option>
-                          <option value="user">user</option>
-                        </select>
-                      </div>
-                    </div>
-                    <button class="btn btn-success btn-user btn-block" name="login">Login</button>
+                    
+                    <button class="btn btn-success btn-user btn-block" type="submit">Login</button>
                     
                   </form>
               
                   <div class="text-center">
                     <a class="small" href="#">Forgot Password?</a>
+                  </div>
+                  <div class="text-center">
+                    <label class="small" for="small">No Account? </label><a class="small" href="/register"> Register here</a>
+                  </div>
+                  <div class="text-center">
+                    <a class="small" href="/">Home</a>
                   </div>
                   
                 </div>

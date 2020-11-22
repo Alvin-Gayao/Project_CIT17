@@ -21,9 +21,9 @@
     <!-- Sidebar -->
       <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
       <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.php">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="sidebar-brand-icon rotate-n-15"></div>
-        <div class="sidebar-brand-text mx-3">Hi Admin!</div>
+        <div class="sidebar-brand-text mx-3">Welcome {{auth()->user()->name}}!</div>
         </a>
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
@@ -182,7 +182,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Account</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{auth()->user()->name}}</span>
                 <img class="prof_pic" src="#">
               </a>
               <!-- Dropdown - User Information -->
@@ -200,7 +200,7 @@
                   Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="/logout">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
