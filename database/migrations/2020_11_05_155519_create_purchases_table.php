@@ -15,8 +15,8 @@ class CreatePurchasesTable extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->id();
-            $table->integer('product_id');
-            $table->integer('supplier_id');
+            $table->unsignedInteger('product_id');
+            $table->unsignedInteger('supplier_id');
             $table->integer('quantity');
             $table->double('price', 10 , 2);
             $table->date('date');

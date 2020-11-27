@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Booking extends Model
 {
-    //
+    public function customers()
+    {
+    	return $this->belongsTo(Customer::class);
+    }
+
+    public function events()
+    {
+    	return $this->belongsTo(Event::class);
+    }
 }
-//php artisan make:model modelname

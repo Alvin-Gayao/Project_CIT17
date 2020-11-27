@@ -36,6 +36,28 @@ Route::middleware(['auth'])->group(function(){
 	//destroy
 	Route::delete('/products/{product}', 'ProductsController@destroy');
 
+	//Customers
+	Route::get('/customers', 'CustomersController@index');
+	//create
+	Route::get('/customers/create', 'CustomersController@create');
+	Route::post('/customers', 'CustomersController@store');
+	//update
+	Route::get('/customers/{customer}/edit', 'CustomersController@edit');
+	Route::put('/customers/{customer}', 'CustomersController@update');
+	//destroy
+	Route::delete('/customers/{customer}', 'CustomersController@destroy');
+
+	//Sales
+	Route::get('/sales', 'SalesController@index');
+	//create
+	Route::get('/sales/create', 'SalesController@create');
+	Route::post('/sales', 'SalesController@store');
+	//update
+	Route::get('/sales/{sale}/edit', 'SalesController@edit');
+	Route::put('/sales/{sale}', 'SalesController@update');
+	//destroy
+	Route::delete('/sales/{sale}', 'SalesController@destroy');
+
 	//logout
 	Route::get('/logout', 'AuthController@logout');
 });
