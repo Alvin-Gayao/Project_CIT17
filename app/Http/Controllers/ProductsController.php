@@ -21,7 +21,7 @@ public function index()
 
     public function store()
     {
-    	$product = new product;
+    	$product = new Product;
     	$product->name = request()->name;
     	$product->description = request()->description;
     	$product->price = request()->price;

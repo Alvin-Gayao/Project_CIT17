@@ -50,13 +50,14 @@ Route::middleware(['auth'])->group(function(){
 	//Sales
 	Route::get('/sales', 'SalesController@index');
 	//create
-	Route::get('/sales/create', 'SalesController@create');
 	Route::post('/sales', 'SalesController@store');
 	//update
 	Route::get('/sales/{sale}/edit', 'SalesController@edit');
 	Route::put('/sales/{sale}', 'SalesController@update');
 	//destroy
 	Route::delete('/sales/{sale}', 'SalesController@destroy');
+
+	Route::get('/sales/create', 'SalesController@create');
 
 	//logout
 	Route::get('/logout', 'AuthController@logout');
