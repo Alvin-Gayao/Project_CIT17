@@ -15,7 +15,7 @@ class CreateSystemUsersTable extends Migration
     {
         Schema::create('system_users', function (Blueprint $table) {
             $table->id();
-            $tale->char('username', 255);
+            $table->char('username', 255);
             $table->char('password', 255);
             $table->string('usertype');
             $table->timestamps();

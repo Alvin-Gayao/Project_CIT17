@@ -86,6 +86,12 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Employees</span></a>
       </li>
+      <!-- Nav Item - Suppliers -->
+      <li class="nav-item">
+        <a class="nav-link" href="/suppliers">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Suppliers</span></a>
+      </li>
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
       <!-- Sidebar Toggler (Sidebar) -->

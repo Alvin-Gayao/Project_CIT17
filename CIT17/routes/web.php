@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'TemplatesController@index');
-Route::get('/templates/adminhome', 'TemplatesController@adminhome');
-Route::get('/templates/register', 'TemplatesController@register');
+Route::get('/', function () {
+    return view('welcome');
+});
