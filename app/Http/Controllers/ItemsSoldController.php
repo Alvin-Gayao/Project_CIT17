@@ -9,7 +9,7 @@ class ItemsSoldController extends Controller
     public function index()
     {
     	$items_sold = Items::all();
-    	return view('items_sold.index', compact('items_sold'));
+    	return view('items_sold.index1', compact('items_sold'));
     }
 
     public function create()

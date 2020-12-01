@@ -16,13 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/templates', 'TemplatesController@index');
 Route::get('/templates/adminhome', 'TemplatesController@adminhome');
 Route::get('/templates/register', 'TemplatesController@register');
-//show
+//items_sold table
 Route::get('/items_sold', 'ItemsSoldController@index');
-//create
 Route::get('/items_sold/create', 'ItemsSoldController@create');
 Route::post('/items_sold', 'ItemsSoldController@store');
-//update
 Route::get('/items_sold/{items_sold}/edit', 'ItemsSoldController@edit');
 Route::put('/items_sold/{items_sold}', 'ItemsSoldController@update');
-//destroy
 Route::delete('/items_sold/{items_sold}', 'ItemsSoldController@destroy');
