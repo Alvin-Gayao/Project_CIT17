@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'TemplatesController@index');
 Route::get('/templates/adminhome', 'TemplatesController@adminhome');
 Route::get('/templates/register', 'TemplatesController@register');
+
 //show
 Route::get('/suppliers', 'SuppliersController@index');
 //create
@@ -37,3 +38,5 @@ Route::get('/products/{products}/edit', 'ProductsController@edit');
 Route::put('/products/{products}', 'ProductsController@update');
 //destroy
 Route::delete('/products/{products}', 'ProductsController@destroy');
+
+
