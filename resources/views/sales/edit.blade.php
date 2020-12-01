@@ -10,7 +10,7 @@
           @method('PUT')
 	  		  @csrf
           <div class="form-group">
-            <input type="number" name="product_id" class="form-control" value="{{ $sales->product->id }}" autocomplete="off" >
+            <input type="number" name="product_id" class="form-control" value="{{ $sales->product_id }}" autocomplete="off" >
           </div>
           <div class="form-group">
             <input type="number" name="quantity" class="form-control" value="{{ $sales->quantity }}" autocomplete="off" >
