@@ -15,4 +15,6 @@ class Booking extends Model
     {
     	return $this->belongsTo(Event::class);
     }
+
+    protected $fillable = ['event_id', 'customer_id', 'location', 'date'];
 }

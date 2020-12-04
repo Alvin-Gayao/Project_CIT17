@@ -40,7 +40,7 @@
 	  	  	  <td>{{ $sales->product->price }}</td>
 	  	  	  <td>
 	  	  	  	<div class="row">
-	  	  	  	  <a href="/sales/{sales}/edit" class="btn btn-info">Edit</a>
+	  	  	  	  <a href="/sales/{{ $sales->id }}/edit" class="btn btn-info">Edit</a>
 				</div>
 	  	  	  </td>		
 	  	  	</tr>

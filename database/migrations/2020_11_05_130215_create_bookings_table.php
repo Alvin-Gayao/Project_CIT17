@@ -18,7 +18,8 @@ class CreateBookingsTable extends Migration
             $table->unsignedInteger('customer_id');
             $table->unsignedInteger('event_id');
             $table->string('location');
-            $table->date('date');
+            $table->date('start');
+            $table->date('end');
             $table->timestamps();
         });
     }

@@ -9,11 +9,12 @@
           @include('layouts.errors')
           @method('PUT')
 	  		  @csrf
+
           <div class="form-group">
-            <input type="number" name="product_id" class="form-control" value="{{ $sales->product_id }}" autocomplete="off" >
+            <input type="number" name="product_id" class="form-control" value="{{ $sales->product_id }}">
           </div>
           <div class="form-group">
-            <input type="number" name="quantity" class="form-control" value="{{ $sales->quantity }}" autocomplete="off" >
+            <input type="number" name="quantity" class="form-control" value="{{ $sales->quantity }}">
           </div>
           <div class="form-group">
             <input type="text" name="buyer_name" class="form-control" value="{{ $sales->buyer_name }}" autocomplete="off" >

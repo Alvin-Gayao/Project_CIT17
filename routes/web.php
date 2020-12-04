@@ -50,14 +50,24 @@ Route::middleware(['auth'])->group(function(){
 	//Sales
 	Route::get('/sales', 'SalesController@index');
 	//create
+	Route::get('/sales/create', 'SalesController@create');
 	Route::post('/sales', 'SalesController@store');
 	//update
-	Route::get('/sales/{sale}/edit', 'SalesController@edit');
-	Route::put('/sales/{sale}', 'SalesController@update');
-	//destroy
-	Route::delete('/sales/{sale}', 'SalesController@destroy');
+	Route::get('/sales/{sales}/edit', 'SalesController@edit');
+	Route::put('/sales/{sales}', 'SalesController@update');
+	//destroys
+	Route::delete('/sales/{sales}', 'SalesController@destroy');
 
-	Route::get('/sales/create', 'SalesController@create');
+	//Bookings
+	Route::get('/bookings', 'BookingsController@index');
+	//create
+	Route::get('/bookings/create', 'BookingsController@create');
+	Route::post('/bookings', 'BookingsController@store');
+	//update
+	Route::get('/bookings/{booking}/edit', 'BookingsController@edit');
+	Route::put('/bookings/{booking}', 'BookingsController@update');
+	//destroy
+	Route::delete('/bookings/{booking}', 'BookingsController@destroy');
 
 	//logout
 	Route::get('/logout', 'AuthController@logout');

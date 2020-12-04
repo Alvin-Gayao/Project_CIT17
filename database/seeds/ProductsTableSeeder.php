@@ -11,7 +11,7 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-       // create 50 dummy products
+        // create 50 dummy products
     	$products = factory(\App\Product::class, 50)->create();
     }
 }

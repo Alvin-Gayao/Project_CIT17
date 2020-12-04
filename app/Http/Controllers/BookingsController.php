@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Supplier;
+use App\Booking;
+use App\Event;
+use App\Customer;
 use Illuminate\Http\Request;
 
 class BookingsController extends Controller
@@ -11,12 +12,14 @@ class BookingsController extends Controller
     public function index()
     {
     	$bookings = Booking::all();
-    	return view('booking.index', compact('bookings'));
+    	return view('bookings.index', compact('bookings'));
     }
 
-    public function create()
+    public function create(Event $event, Customer $customer)
     {
-    	return view('booking.create');
+        $events = Event::all();
+        $customers = Customer::all();
+    	return view('bookings.create', compact(['events', 'customers']));
     }
 
     public function store()
@@ -28,13 +31,13 @@ class BookingsController extends Controller
         $booking->date = request()->date;
     	$booking->save();
     	//redirect to suppliers page
-    	return redirect('/booking');
+    	return redirect('/bookings');
 
     }
 
     public function edit(Booking $booking)
     {
-    	return view('booking.edit', compact('booking'));
+    	return view('bookings.edit', compact('booking'));
     }
 
     public function update(Booking $booking)
@@ -45,13 +48,13 @@ class BookingsController extends Controller
         $booking->date = request()->date;
         $booking->save();
     	//redirect to suppliers page
-    	return redirect('/booking');
+    	return redirect('/bookings');
     }
 
     public function destroy(Booking $booking)
     {
     	$supplier->delete();
-    	return redirect('/booking');
+    	return redirect('/bookings');
     }
 }
 

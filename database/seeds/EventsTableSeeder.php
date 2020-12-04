@@ -11,7 +11,7 @@ class EventsTableSeeder extends Seeder
      */
     public function run()
     {
-        $events = [
+       $events = [
         	['type' => 'Birthday'],
         	['type' => 'Wedding'],
         	['type' => 'Graduation'],
