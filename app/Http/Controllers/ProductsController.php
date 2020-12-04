@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
+use App\products;
 use Illuminate\Http\Request;
 
 
@@ -10,7 +10,7 @@ class ProductsController extends Controller
 {
 public function index()
     {
-    	$products = Product::all();
+    	$products = products::all();
     	return view('products.index', compact('products'));
     }
 
@@ -21,35 +21,35 @@ public function index()
 
     public function store()
     {
-    	$product = new product;
-    	$product->name = request()->name;
-    	$product->description = request()->description;
-    	$product->price = request()->price;
-    	$product->save();
+    	$products = new products;
+    	$products->itemName = request()->itemName;
+    	$products->itemDescription = request()->itemDescription;
+    	$products->price = request()->price;
+    	$products->save();
 
     	//redirect to products page
     	return redirect('/products');
 
     }
 
-    public function edit(Product $product)
+    public function edit(products $products)
     {
-    	return view('products.edit', compact('product'));
+    	return view('products.edit', compact('products'));
     }
 
-    public function update(Product $product)
+    public function update(products $products)
     {
-    	$product->name = request()->name;
-    	$product->description = request()->description;
-    	$product->price = request()->price;
-    	$product->save();
+    	$products->itemName = request()->itemName;
+    	$products->itemDescription = request()->itemDescription;
+    	$products->price = request()->price;
+    	$products->save();
     	//redirect to products page
     	return redirect('/products');
     }
 
-    public function destroy(Product $product)
+    public function destroy(products $products)
     {
-    	$product->delete();
+    	$products->delete();
     	return redirect('/products');
     }
 }
