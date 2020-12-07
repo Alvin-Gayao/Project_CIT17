@@ -1,2 +1,2 @@
 
-'debug' => env('APP_DEBUG', true), 
+'log'=>'errorlog'
