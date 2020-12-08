@@ -69,17 +69,6 @@ Route::middleware(['auth'])->group(function(){
 	//destroy
 	Route::delete('/bookings/{booking}', 'BookingsController@destroy');
 
-	//items sold
-	Route::get('/ItemsSold', 'ItemsSoldController@index');
-	//create
-	Route::get('/ItemsSold/create', 'ItemsSoldController@create');
-	Route::post('ItemsSold', 'ItemsSoldController@store');
-	//update
-	Route::get('ItemsSold/{itemsold}/edit', 'ItemsSoldController@edit');
-	Route::put('/ItemsSold/{itemsold}', 'ItemsSoldController@update');
-	//destroy
-	Route::delete('/ItemsSold/{itemsold}', 'ItemsSoldController@destroy');
-
 	//logout
 	Route::get('/logout', 'AuthController@logout');
 });

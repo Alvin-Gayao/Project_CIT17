@@ -15,10 +15,11 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->int('customerID');
-            $table->char('event', 255);
-            $table->char('location', 255);
-            $table->date('date');
+            $table->unsignedInteger('customer_id');
+            $table->unsignedInteger('event_id');
+            $table->string('location');
+            $table->date('start');
+            $table->date('end');
             $table->timestamps();
         });
     }

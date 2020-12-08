@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Supplier extends Model
+class Customer extends Model
 {
     use Notifiable;
 
@@ -16,11 +16,11 @@ class Supplier extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'contact',
+        'first_name', 'last_name', 'contact_number', 'address',
     ];
 
-    public function purchases()
+    public function bookings()
     {
-    	return $this->hasMany(Purchase::class);
+    	return $this->hasMany(Booking::class);
     }
 }
