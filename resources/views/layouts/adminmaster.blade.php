@@ -102,6 +102,13 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Suppliers</span></a>
       </li>
+      <!--Nav Item - Items Sold -->
+      <li class="nav-item">
+        <a class="nav-link" href="/ItemsSold">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Items Sold</span></a>
+        </li>
+
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
       <!-- Sidebar Toggler (Sidebar) -->
