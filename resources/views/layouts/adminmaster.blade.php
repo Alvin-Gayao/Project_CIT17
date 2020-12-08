@@ -7,9 +7,10 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-  <title>SMS - Home</title>
-  
+  <title>SMS</title>
+  @yield('style')
   <!-- Custom fonts for this template-->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
   <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <!-- Custom styles for this template-->
@@ -21,15 +22,15 @@
     <!-- Sidebar -->
       <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
       <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.php">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="sidebar-brand-icon rotate-n-15"></div>
-        <div class="sidebar-brand-text mx-3">Hi Admin!</div>
+        <div class="sidebar-brand-text mx-3">Welcome {{auth()->user()->name}}!</div>
         </a>
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
       <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-          <a class="nav-link" href="home.html">
+          <a class="nav-link" href="/dashboard">
             <i class="fas fa-fw fa-calendar-alt"></i>
           <span>Main Panel</span></a>
         </li>
@@ -45,15 +46,24 @@
             <div class="bg-white py-2 collapse-inner rounded">
               <h6 class="collapse-header">Custom Projects:</h6>
               <a class="collapse-item" href="#">Task Manager</a>
-              <a class="collapse-item" href="#">Schedules</a>
+              <a class="collapse-item" href="/bookings">Bookings</a>
             </div>
           </div>
         </li>
       <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-clipboard-list"></i>
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true" aria-controls="collapsePage">
+            <i class="fas fa-clipboard-list"></i>
           <span>Inventory</span>
           </a>
+          <div id="collapsePage" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Inventory:</h6>
+              <a class="collapse-item" href="/products">Products</a>
+              <a class="collapse-item" href="/sales">Sales</a>
+              <a class="collapse-item" href="#">Purchases</a>
+            </div>
+          </div>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider">
@@ -76,7 +86,7 @@
         </li>
       <!-- Nav Item - Customers -->
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="/customers">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Customers</span></a>
       </li>
@@ -86,12 +96,19 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Employees</span></a>
       </li>
-      <!-- Nav Item - Item Sold -->
+      <!-- Nav Item - Suppliers -->
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="/suppliers">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Suppliers</span></a>
+      </li>
+      <!--Nav Item - Items Sold -->
+      <li class="nav-item">
+        <a class="nav-link" href="/ItemsSold">
           <i class="fas fa-fw fa-table"></i>
           <span>Items Sold</span></a>
-      </li>
+        </li>
+
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
       <!-- Sidebar Toggler (Sidebar) -->
@@ -182,7 +199,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Account</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{auth()->user()->name}}</span>
                 <img class="prof_pic" src="#">
               </a>
               <!-- Dropdown - User Information -->
@@ -200,7 +217,7 @@
                   Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="/logout">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -215,6 +232,7 @@
         </div>
     </div>
   </div>
+  @yield('calendar')
   
                 <!-- Bootstrap core JavaScript-->
   <script src="/vendor/jquery/jquery.min.js"></script>
@@ -228,6 +246,8 @@
 
   <!-- Page level plugins -->
   <script src="/vendor/chart.js/Chart.min.js"></script>
+  @yield('content1')
+
 </body>
 
         

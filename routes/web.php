@@ -2,24 +2,84 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/', function () {
+    	return view('welcome');
+		});
+//authentication
+Route::get('/login', 'AuthController@index')->name('login');
+Route::post('/login', 'AuthController@login');
+Route::get('/register', 'AuthController@register');
+Route::post('/register', 'AuthController@store');
 
-Route::get('/templates', 'TemplatesController@index');
-Route::get('/templates/adminhome', 'TemplatesController@adminhome');
-Route::get('/templates/register', 'TemplatesController@register');
-//items_sold table
-Route::get('/items_sold', 'ItemsSoldController@index');
-Route::get('/items_sold/create', 'ItemsSoldController@create');
-Route::post('/items_sold', 'ItemsSoldController@store');
-Route::get('/items_sold/{items_sold}/edit', 'ItemsSoldController@edit');
-Route::put('/items_sold/{items_sold}', 'ItemsSoldController@update');
-Route::delete('/items_sold/{items_sold}', 'ItemsSoldController@destroy');
+
+Route::middleware(['auth'])->group(function(){
+	Route::get('/dashboard', 'TemplatesController@index');
+	//suppliers show
+	Route::get('/suppliers', 'SuppliersController@index');
+	//create
+	Route::get('/suppliers/create', 'SuppliersController@create');
+	Route::post('/suppliers', 'SuppliersController@store');
+	//update
+	Route::get('/suppliers/{supplier}/edit', 'SuppliersController@edit');
+	Route::put('/suppliers/{supplier}', 'SuppliersController@update');
+	//destroy
+	Route::delete('/suppliers/{supplier}', 'SuppliersController@destroy');
+
+	//Products//
+	Route::get('/products', 'ProductsController@index');
+	//create
+	Route::get('/products/create', 'ProductsController@create');
+	Route::post('/products', 'ProductsController@store');
+	//update
+	Route::get('/products/{product}/edit', 'ProductsController@edit');
+	Route::put('/products/{product}', 'ProductsController@update');
+	//destroy
+	Route::delete('/products/{product}', 'ProductsController@destroy');
+
+	//Customers
+	Route::get('/customers', 'CustomersController@index');
+	//create
+	Route::get('/customers/create', 'CustomersController@create');
+	Route::post('/customers', 'CustomersController@store');
+	//update
+	Route::get('/customers/{customer}/edit', 'CustomersController@edit');
+	Route::put('/customers/{customer}', 'CustomersController@update');
+	//destroy
+	Route::delete('/customers/{customer}', 'CustomersController@destroy');
+
+	//Sales
+	Route::get('/sales', 'SalesController@index');
+	//create
+	Route::get('/sales/create', 'SalesController@create');
+	Route::post('/sales', 'SalesController@store');
+	//update
+	Route::get('/sales/{sales}/edit', 'SalesController@edit');
+	Route::put('/sales/{sales}', 'SalesController@update');
+	//destroys
+	Route::delete('/sales/{sales}', 'SalesController@destroy');
+
+	//Bookings
+	Route::get('/bookings', 'BookingsController@index');
+	//create
+	Route::get('/bookings/create', 'BookingsController@create');
+	Route::post('/bookings', 'BookingsController@store');
+	//update
+	Route::get('/bookings/{booking}/edit', 'BookingsController@edit');
+	Route::put('/bookings/{booking}', 'BookingsController@update');
+	//destroy
+	Route::delete('/bookings/{booking}', 'BookingsController@destroy');
+
+	//items sold
+	Route::get('/ItemsSold', 'ItemsSoldController@index');
+	//create
+	Route::get('/ItemsSold/create', 'ItemsSoldController@create');
+	Route::post('ItemsSold', 'ItemsSoldController@store');
+	//update
+	Route::get('ItemsSold/{itemsold}/edit', 'ItemsSoldController@edit');
+	Route::put('/ItemsSold/{itemsold}', 'ItemsSoldController@update');
+	//destroy
+	Route::delete('/ItemsSold/{itemsold}', 'ItemsSoldController@destroy');
+
+	//logout
+	Route::get('/logout', 'AuthController@logout');
+});

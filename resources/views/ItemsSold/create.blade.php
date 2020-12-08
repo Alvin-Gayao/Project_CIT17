@@ -5,13 +5,13 @@
 		<h4>Add Item Sold</h4>
 	  <div class="container">
       <div class="row justify-content-center">
-	  	  <form action="/items_sold" method="POST">
+	  	  <form action="/ItemsSold" method="POST">
 	  		   @csrf
            <div class="form-group">
-             <input type="text" name="name" class="form-control" placeholder="Enter Item Name">
+             <input type="text" name="name" class="form-control" placeholder="Enter Name">
            </div>
            <div class="form-group">
-             <input type="number" name="productID" class="form-control" placeholder="Enter Product ID">
+             <input type="number" name="contact" class="form-control" placeholder="Enter Contact">
            </div>
            <div class="form-group">
              <button type="submit" class="btn btn-primary" name="save">Save</button>
