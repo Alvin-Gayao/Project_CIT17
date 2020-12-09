@@ -10,7 +10,8 @@ Route::get('/login', 'AuthController@index')->name('login');
 Route::post('/login', 'AuthController@login');
 Route::get('/register', 'AuthController@register');
 Route::post('/register', 'AuthController@store');
-
+Route::get('/signup', 'AuthController@signup');
+Route::post('/signup', 'AuthController@store');
 
 Route::middleware(['auth'])->group(function(){
 	Route::get('/dashboard', 'TemplatesController@index');
