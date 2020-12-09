@@ -54,6 +54,27 @@ class AuthController extends Controller
     		]);
     }
 
+    public function signup()
+    {
+        return view('signup');
+    }
+
+    public function store()
+    {
+        //validate form
+        $validated_fields = request()->validate([
+            'name' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required'
+        ]);
+        //dd($validated_fields);
+        //add user to the database
+        $validated_fields['password'] = bcrypt($validated_fields['password']);
+        $user = User::create($validated_fields);
+        
+       return redirect('/login'); 
+    }
+
     public function logout(){
     	Auth::logout();
     	return redirect('/login');

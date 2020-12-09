@@ -68,6 +68,7 @@
             <div class="top-right links">    
                 <a href="/login">Login</a>
                 <a href="/register">Register</a>
+                <a href="/signup">Sign-up</a>
             </div>
 
             <div class="content">
